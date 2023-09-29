@@ -1,0 +1,117 @@
+            LINUX
+Linux es un sistema operativo de còdigo abierto y gratuito que forma parte de la familia Unix.
+Se caracteriza por su estabilidad, seguridad y flexibilidad, y se utiliza en una amplia variedad de dispositivos y servidores.
+Linux se basa en el kernel de Linux, que es el nùcleo del sistema, y puede ser personalizado y modificado por la comunidad de los desarrolladores.
+
+
+
+3 TIPOS DE USUARIOS
+
+# Usuario root o administrador: El usuario root es el administrador principal del sistema Linux y tiene acceso completo a todas las funciones y recursos. Pueden realizar tareas de administraciòn, instalar sotware, configurar el sistema y realizar cambios crìtivos.
+# Usuarios normales o de trabajo: Los usuarios normales son aquellos que utilizan el sistema para tareas cotidianas y de trabajo. Tienen permisos limitados y no pueden realizar cambios fundamentales en el sistema.
+# Usuarios especiales o de sistema: Los usuarios especiales son cuentas creadas para que los servicios y aplicaciones del sistema pueden acceder a recursos especìficos. Su propòsito es garantizar la seguridad y el aislamiento de los servicios del sistema.
+
+DIRECTORIOS DE LINUX
+/ : Root o principal. Punto de acceso al sistema de ficheros.
+/bin : Ejecutables o ficheros binarios.
+/dev : dispositivos. Contiene los ficheros que se comunican con los distintos dispositivos del sistema.
+/etc : Ficheros de configuraciòn y diversos scripts.
+/home : Directorios personales de los usuarios.
+/lib : Librerìas del sistema.
+/media : Para el montaje de dispositivos extraìbles.
+/mnt : Para montar sistemas de ficheros.
+/opt : Para isntalar sotware externo.
+/proc : Informaciòn sobre el estado del sistema, dispositivos y procesos.
+/root : Directorio HOME del usuario ROOT.
+/sbin : Otros binarios.
+/tmp : Ficheros y directorios temporales.
+/usr : Aplicacionesy archivos varios.
+/var/ : Ficheros de logs, trazas y otros ficheros dinàmicos.
+
+METACHARACTER(S)
+Son caràcteres especiales que tienen un significado especial en el contexto de la lìnea de comandos de linux y se utilizan para realizar tareas como bùsqueda,
+coincidencia de patrones, redirecciòn  y màs. som:
+
+# * (Asterisco): Se utiliza para hacer coincidir cero o más caracteres en nombres de archivos o directorios. Por ejemplo, *.txt coincidiría con todos los archivos que terminan en ".txt".
+# ? : (Signo de interrogación): Se utiliza para hacer coincidir un solo carácter en nombres de archivos o directorios. Por ejemplo, archivo?.txt coincidiría con "archivo1.txt" y "archivo2.txt", pero no con "archivo10.txt".
+# [] : (Corchetes): Se utiliza para hacer coincidir un solo carácter de una lista de caracteres posibles. Por ejemplo, [aeiou] coincidiría con cualquier vocal, y [0-9] coincidiría con cualquier dígito.
+# | : (Barra vertical): Se utiliza para realizar una operación "o" en comandos. Por ejemplo, comando1 | comando2 redirige la salida del "comando1" a la entrada del "comando2".
+# > : (Mayor que): Se utiliza para redirigir la salida de un comando a un archivo. Por ejemplo, comando > archivo.txt guarda la salida del "comando" en "archivo.txt" (sobrescribe el archivo si ya existe).
+# >> : (Doble mayor que): Similar a >, pero agrega la salida al final de un archivo en lugar de sobrescribirlo. Por ejemplo, comando >> archivo.txt agrega la salida al final de "archivo.txt".
+# < : (Menor que): Se utiliza para redirigir la entrada de un comando desde un archivo. Por ejemplo, comando < archivo.txt toma la entrada del "comando" desde "archivo.txt".
+# ; : (Punto y coma): Se utiliza para separar múltiples comandos en una sola línea de comando. Por ejemplo, comando1 ; comando2 ejecuta "comando1" y luego "comando2".
+# (): (Paréntesis): Se utiliza para agrupar comandos y controlar el orden de ejecución. Por ejemplo, (comando1 ; comando2) ejecuta "comando1" y luego "comando2" en un subshell.
+# & : (Ampersand): Se utiliza para ejecutar un comando en segundo plano, lo que permite que la línea de comandos esté disponible para la entrada de más comandos mientras el comando en segundo plano se ejecuta.
+
+
+
+COMANDOS:
+
+* pwd : Sirve para mostrar la ruta de directorio actual.
+* ls : Lista todos los archivos y directorios del directorio actual.
+    ** ls -l: lista detalladamente los archivos y directorios, como sus permisos, propietario, tamaño, etc.
+    ** ls -a : muestra archivos ocultos que comienzan con un punto(puede ser archivos de configuraciòn).
+    ** ls -h : muestra tamaños de archivos en un formato legible por humanos(por ejemplo, "1.2M").
+    ** ls -R : lista los archivos y directorios de manera recursiva, incluyendo subdirectorios.
+    ** ls -t: Ordena los archivos y directorios por fecha y hora de modificación, mostrando primero los más recientes.
+    ** ls -r: Lista los archivos y directorios en orden inverso, es decir, desde el último hasta el primero.
+    ** ls -S: Ordena los archivos y directorios por tamaño, mostrando primero los más grandes.
+    ** ls -i: Muestra los números de inodo de los archivos y directorios, que son identificadores únicos del sistema de archivos.
+    ** ls -1: Lista los archivos y directorios en una sola columna, uno por línea, útil para una salida más simple.
+    ** ls -G: Muestra la salida en color, lo que facilita la identificación de archivos y directorios.
+    ** ls -lha: Muestra una lista detallada, incluyendo archivos ocultos y con tamaños legibles por humanos.   
+    ** ls -ltr: Lista archivos y directorios en orden inverso y ordenados por fecha y hora de modificación. 
+    ** ls -alh: Muestra archivos legibles para el usuario.
+* cd : Cambiar al directorio personal del usuario.
+    ** cd / : Cambiar al directorio raiz.
+    ** cd .. : Cambiar al directorio anterios.
+    ** cd ~nombre_de_usuario: Cambiar al directorio de inicio de otro usuario.
+    ** cd . : permanece en el directorio actual.
+* man nombre_de_comands : muestra la paginas manuales de los comandos, programas y funcioens del sistema operativo.
+* file file_name : Sirve para extraer informaciòn de un archivo.
+* mkdir nombre_del_directorio : Este comando crearà un directorio con el nombre especìficado en el directorio actual.
+    ** mkdir -p directorio1/directorio2/directorio3 : Esto crearà los directorios mencionados, junto son sus subdirectorios si no existen.
+    ** mkdir -m 755 nombre_del_directorio : Esto establecerà permisos de lectura, escritura y ejecuciòn para el propietario, y permisos de lectura y ejecuciòn para otros usuarios en el directorio creado.
+    ** mkdir dectorio1 directorio2 directorio3 : Esto crearà los directorios mencionado en el directorio actual.
+    ** mkdir -o usuario -g grupo nombre_del_directorio : Esto establecerà el propietario como "usuario" y el grupo como "grupo" para el directorio creado.
+    ** mkdir -d "2023-09-18 10:30" nombre_del_directorio : Esto establecerà la marca de tiempo del directorio en la fecha y hora especìficadas.
+    ** mkdir -v 'directorio' : Utiliza un variante de mkdir apra mostrar un mensaje informativo que indica què directorio se està creando.
+* touch nombre_del_archivo : Esto crearà un archivo en directorio actual.
+    ** touch file.txt file2.txt file3.txt : Crea varios archivos al mismo tiempo proporcionando una lista de nombres de archivos separados por espacios.
+    ** touch archivo_existente.txt :  Sirve para actualizar su marca de tiempo sin modificar su contenido.
+    ** touch -d "2023-09-15 14:30" file.txt : la opciòn -d sirve para especificar una marca de tiempo personalizada para un archivo.
+    ** touch -r archivo_original.txt archivo_nuevo.txt : La opciòn -r seguidad del nombre de otro archivo para copiar las marcas de tiempo de ese archivo a un nuevo archivo.
+    ** touch -c archivo.txt : La opciòn -c o --no-create permite verificar si un archivo existe antes de intentar crearlo. Si el archivo no existe, no se crearà.
+    ** touch -t 202309151430 file.txt : La opciòn '-t' seguida de un formato especìfico de fecha y hora para establecer la marca de tiempo de un archivo.
+* echo : se utiliza para imprimir texto o variables en la pantalla o redigir su salida hacia un archivo.
+    ** echo "Hello, World" : El uso màs bàsico de 'echo' es imprimir texto en la pantalla.
+    ** echo -n "Hola": La opciòn '-n' para imprimir texto sin un salto de lìnea al final
+    ** echo -e "Lìnea 1\nLìnea 2\tTabulaciòn" : Interpreta secuencias de escape, como "\n" para nueva lìnea o "\t" para tabulaciòn.
+    ** echo $mi_variable : Puedes usar 'echo' para imprimir el contenido de variables.
+    ** echo "redirige el texto al archivo.txt" > archivo.txt : Puedes redigir la salida de 'echo' a un archivo utilizando el operador '>'.
+    ** echo "Este es un mensaje" >> archivo.txt : Puedes usar '>>' para redijir la salida de 'echo' y agregar el contenido al final de un archivo existente en lugar de sobreescribirlo.
+    ** echo "Error" 2>error.txt : Puedes usar '2>' para redigir la salida de error de 'echo' a un archivo.
+    ** echo "Mensaje" > salida.txt 2>&1 : Puedes combinar la salida estàndar y de error en un solo archivo utilizando '2>&1'.
+* cat : Se utiliza principalmente para mostrar el contenido de archivos de texto en la terminal.
+    ** cat archivo.txt : El uso màs bàsico de 'cat' es mostrar el contenido de un archivo en la pantalla.
+    ** cat file.txt file2.txt file3.txt : Muestra el contenidode varios archivos.
+    ** cat file.txt file2.txt > archivo_concatenado.txt : Se utiliza comùnmente para concatenar el contenido de varios archivos en un solo.
+    ** cat -n file.txt : La opciòn '-n' para numerar las lìneas de salida.
+    ** tac file.txt : La opciòn 'r' para mostrar el contenido del archivo en sentido inverso, es decir, desde el final al principio.
+    ** cat file.txt | grep "patròn" : Puede usar 'cat' junto con otras herramientas como 'grep' o 'sed' para mostrar solo las lìneas que coincidan con un patròn especìfico en un archivo.
+    ** zcat : cat se puede usar junto con otras herramientas como 'zcat' o 'bzcat' para mostrar el contenido de archivos comprimidos.
+* cp : Se utiliza para copiar archivos y directorios.
+    ** cp archivo_origen archivo_destino : El uso màs bàsico de 'cp' es copiar un archivo a otro destino.
+    ** cp file.txt file2.txt directorio_destino/ : Copia varios archivos en un directorio especìfico proporcionado una lista de archivos de origen seguidos por el directorio de destino.
+    ** cp -r directorio_origen/ directorio_destino/ : Copia un directorio y su contenido utilizando la opciǹ '-r' o 'R'.
+    ** cp -rp directorio_origen/ directorio_destino/ : La opción -p para preservar los atributos, marcas de tiempo y permisos de los archivos y directorios al copiarlos.
+    ** cp -i archivo_origen archivo_destino : or defecto, cp no sobrescribe archivos existentes en el destino. Puedes utilizar la opción -i para que cp te pregunte antes de sobrescribir archivos existentes. 
+    ** cp -f archivo_origen archivo_destino :  La opción -f para forzar la copia, sobrescribiendo archivos en el destino sin preguntar.
+    ** cp -v archivo_origen archivo_destino : La opción -v (que significa "verbose") muestra información detallada sobre los archivos copiados mientras se realiza la operación. 
+    ** cp -s archivo_origen archivo_destino : La opción -s para preservar los enlaces simbólicos al copiar archivos y directorios.
+
+
+
+
+
+
