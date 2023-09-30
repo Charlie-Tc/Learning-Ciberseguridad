@@ -75,7 +75,7 @@ COMANDOS:
     ** mkdir dectorio1 directorio2 directorio3 : Esto crearà los directorios mencionado en el directorio actual.
     ** mkdir -o usuario -g grupo nombre_del_directorio : Esto establecerà el propietario como "usuario" y el grupo como "grupo" para el directorio creado.
     ** mkdir -d "2023-09-18 10:30" nombre_del_directorio : Esto establecerà la marca de tiempo del directorio en la fecha y hora especìficadas.
-    ** mkdir -v 'directorio' : Utiliza un variante de mkdir apra mostrar un mensaje informativo que indica què directorio se està creando.
+    ** mkdir -v 'directorio' : Utiliza un variante de mkdir para mostrar un mensaje informativo que indica què directorio se està creando.
 * touch nombre_del_archivo : Esto crearà un archivo en directorio actual.
     ** touch file.txt file2.txt file3.txt : Crea varios archivos al mismo tiempo proporcionando una lista de nombres de archivos separados por espacios.
     ** touch archivo_existente.txt :  Sirve para actualizar su marca de tiempo sin modificar su contenido.
@@ -109,9 +109,52 @@ COMANDOS:
     ** cp -f archivo_origen archivo_destino :  La opción -f para forzar la copia, sobrescribiendo archivos en el destino sin preguntar.
     ** cp -v archivo_origen archivo_destino : La opción -v (que significa "verbose") muestra información detallada sobre los archivos copiados mientras se realiza la operación. 
     ** cp -s archivo_origen archivo_destino : La opción -s para preservar los enlaces simbólicos al copiar archivos y directorios.
-
-
-
-
+* mv : Sirve para mover o renombrar archivos y directorios.
+    ** mv archivo_origen archivo_destino : El uso màs bàsico de 'mv' es mover un archivo a otro destino.
+    ** mv file.txt file2.txt directorio_destino/ : Mueve varios archivos a un directorio especìfico.
+    ** mv archivo_antiguo.txt archivo_nuevo.txt : Usa 'mv' para cambiar el nombre de un archivo o directorio al mismo tiempo que lo mueves.
+    ** mv -t directorio_destino/ directorio_origen/ : Puedes mover un directorio y su contenido utilizando la opción -t (que significa "target" o destino). 
+    ** mv -f archivo_origen archivo_destino : uedes utilizar la opción -f para forzar la acción, lo que significa que mv sobrescribirá archivos existentes en el destino sin preguntar.
+    ** mv -p archivo_origen archivo_destino : Puedes utilizar la opción -p para preservar los atributos, marcas de tiempo y permisos de los archivos y directorios al moverlos. 
+    ** mv mv -v archivo_origen archivo_destino : La opción -v (que significa "verbose") muestra información detallada sobre los archivos y directorios movidos mientras se realiza la operación.
+    ** mv mv -n archivo_origen archivo_destino : or defecto, mv no sobrescribe archivos existentes en el destino. Puedes utilizar la opción -n para evitar que mv sobrescriba archivos.
+* rmdir : Se utiliza para eliminar directorios y archivos.
+    ** rmdir nombre_del_directorio : El uso más básico de rmdir es simplemente proporcionar el nombre del directorio que deseas eliminar. 
+    ** rmdir directorio1 directorio2 directorio3 : uedes eliminar varios directorios vacíos al mismo tiempo proporcionando una lista de nombres de directorios separados por espacios. 
+    ** rm -r directorio_no_vacio/ : Si deseas eliminar un directorio y su contenido (incluso si no está vacío), debes usar el comando rm en lugar de rmdir. 
+    ** rmdir -p directorio_padre/directorio_hijo : La opción -p para eliminar un directorio y todos sus directorios padres que estén vacíos.
+    ** rmdir -i directorio_vacio : Puedes usar la opción -i para que rmdir te pregunte antes de eliminar cada directorio. Esto es útil para evitar la eliminación accidental.
+* tail : Se utiliza principalmente para mostrar las ùltimas lìneas de un archivo de texto en la terminal.
+    ** tail archivo.txt : El uso màs bàsico de 'tail' es simplemente proporcionar el nombre del archivo.
+    ** tail -n 30 archivo.txt : La opciòn '-n' seguida de un nùmero para especificar cuàntas lìneas quieres mostrar.
+    ** tail -f archivo.txt : puedes utilizar la opciòn 'f' para mostrar las nuevas lìneas que se agregan al archivo en tiempo real.
+    ** tail -c 100 archivo.txt : La opciòn '-c' seguida de un nùmero para mostrar las ùltimas lìneas desde una posiciòn especìfica en bytes.
+    ** tail -r file.txt : La opciòn '-r' para mostrar las lìneas en orden inverso, es decir, desde la ùltima lìnea hasta la primera.
+    ** tail file.txt file2.txt : Puedes proporcionar una lista de nombres de arhcivos separados por espacios para ver las ùltimas lìneas de varios archivos al mismo tiempo.
+* head : Se utilza principalmente para mostrar las primeras lineas de un texto en la terminal.
+    ** head file.txt : Muestra la primeras lìneas del archivo.
+    ** head -n 5 file.txt : Muestra la primeras 5 lìneas del archivo.
+* less file.txt : Se utilza para visualizar archivos de texto uno a la vez, lo que facilita la navegaciòn y la lectura de archivos largos.
+* tree : El uso más básico de tree es simplemente ejecutarlo sin opciones.
+    ** tree -L 2 : Puedes utilizar la opción -L seguida de un número para limitar la profundidad a la que se muestra la estructura de directorios.
+    ** tree -d : Mostrar solo directorios
+    ** tree -f : Mostrar solo archivos
+    ** tree -P "*.txt" : Puedes utilizar la opción -P seguida de un patrón para mostrar solo los archivos y directorios que coincidan con ese patrón.
+    ** tree -p : Puedes utilizar la opción -p para mostrar los permisos y propietarios de cada archivo y directorio en la estructura. 
+    ** tree -a : Puedes utiliPuedes utilizar la opción -s para mostrar los tamaños de archivo y directorio en la estructura.
+    ** tree > estructura.txt : Puedes redirigir la salida de tree a un archivo de texto utilizando el operador >.
+* who : Se utiliza para mostrar informaciòn sobre los usuarios que estàn actualmente conectados al sistema.
+    ** who -l : Puedes utilizar la opción -l (que significa "long" o larga) para mostrar información adicional sobre los usuarios, como su dirección IP y el nombre de la máquina desde la que se conectaron. 
+    ** who -q : Puedes utilizar la opción -q (que significa "quick" o rápido) para mostrar solo los nombres de usuario de los usuarios conectados, sin información adicional. 
+    ** who -lq : Puedes combinar las opciones -l y -q para mostrar información detallada pero en un formato más compacto. 
+    ** who usuario1 : uedes proporcionar el nombre de usuario como argumento para who para ver información sobre un usuario específico.
+    ** who -f /var/log/wtmp : Puedes utilizar la opción -f seguida de la ubicación de un archivo de registro para mostrar información sobre usuarios conectados desde ese archivo de registro.
+    ** who --dead : Puedes utilizar la opción --dead para mostrar solo usuarios que han desconectado sus sesiones. 
+* ln : Se utiliza para crear enlaces(simbòlicos o duros) entre archivos y directorios.
+    ** ln -s archivo_o_directorio enlace_simbolico : El uso màs bàsico de 'ln' para crear un enlace simbòlico es proporcionar el nombre del archivo o directorio de destino y el nombre del enlace simbòlico que deseas crear.
+    ** ln archivo_o_directorio enlace_duro : Para crear un enlace duro, simplemente proporciona el nombre del archivo o directorio de destino y el nombre del enlace duro que deseas crear.
+    ** ln -sf archivo_o_directorio enlace_simbolico : Puedes utilizar la opciòn '-f' para forzar la creaciòn de enlaces incluso si el enlace simbòlico o enlace duro ya existe.
+    ** ln archivo_o_directorio directorio_destino/ : Puedes especificar un directorio de destino en lugar de un nombre de enlace simbòlico o enlace duro. Esto crearà el enlace en ese directorio con el mismo nombre que el archivo o directorio de origen.
+* ls -i [directorio] : Se utiliza para mostrar la lista de archivos y directorios en un directorio junto con sus nùmeros de nodo ¡Node.
 
 
