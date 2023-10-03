@@ -156,5 +156,16 @@ COMANDOS:
     ** ln -sf archivo_o_directorio enlace_simbolico : Puedes utilizar la opciòn '-f' para forzar la creaciòn de enlaces incluso si el enlace simbòlico o enlace duro ya existe.
     ** ln archivo_o_directorio directorio_destino/ : Puedes especificar un directorio de destino en lugar de un nombre de enlace simbòlico o enlace duro. Esto crearà el enlace en ese directorio con el mismo nombre que el archivo o directorio de origen.
 * ls -i [directorio] : Se utiliza para mostrar la lista de archivos y directorios en un directorio junto con sus nùmeros de nodo ¡Node.
-
+* du : Se utiliza  para mostrar el uso del espacio en disco de archivos y directorios. 
+    ** du -h : Muestra el uso del espacio en disco de forma legible para el ser humano es decir con tamaños en formato legible como KB, MB o GB.
+    ** du -s : Muestra el uso total del espacio en disco de un directorio sin listar el detalle de cada subdirectorio.
+    ** du -c : Muestra el uso del espacio en disco de cada subdirectorio y al final muestra un total acumulado.
+    ** du -a : Muestra el uso del espacio en disco de archivos y directorios por separado.
+    ** du -d N : Limita la profundidad de la bùsqueda hasta N niveles de subdirectorios. por ejemplo, du -d 2 mostrarà solo el uso del espacio en disco hasta un màximo de dos niveles de subdirectorios.
+    ** du --max-depth=N: Limita la profundidad de bùsqueda.
+    ** du -k : Muestra el uso del espacio en disco en kilobytes en lugar de bloques de disco.
+    ** du -m : Muestra el uso del espacio en disco en megabytes.
+    ** du -g : Muestra el uso del espacio en disco en gigabytes.
+    ** du -h --max-depth=1 | sort -hr : Muestra el uso delespacio en disco de los subdirectorios del directorio actual en un formato legible para humanos y lo ordena en orden descendente para mostrar los directorios mas grandes primero.
+* df :  
 
