@@ -167,5 +167,22 @@ COMANDOS:
     ** du -m : Muestra el uso del espacio en disco en megabytes.
     ** du -g : Muestra el uso del espacio en disco en gigabytes.
     ** du -h --max-depth=1 | sort -hr : Muestra el uso delespacio en disco de los subdirectorios del directorio actual en un formato legible para humanos y lo ordena en orden descendente para mostrar los directorios mas grandes primero.
-* df :  
+* df :  El uso más básico de df es simplemente ejecutarlo sin opciones.
+    ** df -h : Puedes utilizar la opción -h (que significa "human-readable" o "legible para humanos") para mostrar los tamaños en un formato más fácil de entender, como gigabytes (GB) y megabytes (MB).
+    ** df /ruta/al/sistema_de_archivos : Puedes proporcionar el nombre de un sistema de archivos como argumento para df para ver información específica sobre ese sistema de archivos.
+    ** df -l : Puedes utilizar la opción -l (que significa "local" o "solo sistemas de archivos locales") para mostrar solo sistemas de archivos locales en lugar de sistemas de archivos de red o remotos.
+    ** df -i : Puedes utilizar la opción -i para mostrar el número de inodos en lugar de bloques en el sistema de archivos. Los inodos son estructuras de datos utilizadas por el sistema de archivos para almacenar información sobre archivos y directorios.
+    ** df -T : Puedes utilizar la opción -T para mostrar el tipo de sistema de archivos de cada sistema de archivos montado. Esto te proporcionará información sobre si un sistema de archivos es ext4, NTFS, etc
+    ** df -x ext4 : Puedes utilizar la opción -x seguida de un tipo de sistema de archivos para mostrar solo sistemas de archivos de ese tipo.
+* history : Sirve para ver una lista de comando ejecutados por el usuario.
+    ** !5 : Puedes ejecutar un comando previo del historial utilizando el formato !n, donde "n" es el número de línea del comando en el historial.
+    ** !! : Puedes ejecutar el último comando ejecutado utilizando !!. 
+    ** !ls :Ejecutar un comando que coincida con un patrón específico: Puedes usar !patrón para ejecutar el último comando que coincida con un patrón específico. Por ejemplo, si deseas ejecutar el último comando que comienza con "ls".
+    ** history -c : Puedes borrar todo el historial de comandos utilizando el comando history -c.
+    ** history > file.txt : Puedes exportar el historial de comandos a un archivo de texto utilizando el comando history > archivo.txt. Esto te permite guardar el historial en un archivo para referencia futura.
+    ** history -r : Puedes recargar el historial de comandos actual en la sesión actual utilizando history -r. Esto puede ser útil si has editado manualmente el archivo de historial y deseas reflejar esos cambios en la sesión actual.
+    ** history -n : Puedes usar history n para ver los últimos "n" comandos ejecutados en el historial. Por ejemplo, history 10 mostrará los últimos 10 comandos ejecutados.
+    ** history | grep buscar : Puedes buscar comandos específicos en el historial utilizando el comando history | grep patrón. Por ejemplo, para buscar comandos que contengan la palabra "buscar".
+    ** history -d numero_de_comando : Borra el comando de la lista de historial.
+
 
