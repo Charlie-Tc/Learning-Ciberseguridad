@@ -184,5 +184,122 @@ COMANDOS:
     ** history -n : Puedes usar history n para ver los últimos "n" comandos ejecutados en el historial. Por ejemplo, history 10 mostrará los últimos 10 comandos ejecutados.
     ** history | grep buscar : Puedes buscar comandos específicos en el historial utilizando el comando history | grep patrón. Por ejemplo, para buscar comandos que contengan la palabra "buscar".
     ** history -d numero_de_comando : Borra el comando de la lista de historial.
-
-
+* gedit archivo.txt : Puedes abrir un archivo específico en gedit proporcionando su ruta como argumento al comando gedit.
+    ** gedit & : Puedes simplemente ejecutar gedit en la terminal para abrir una nueva ventana de gedit. Si deseas abrir gedit en segundo plano (para seguir usando la terminal), puedes agregar un ampersand & al final.
+    ** sudo gedit /etc/archivo_de_configuracion : Si necesitas editar archivos que requieren permisos de superusuario (por ejemplo, archivos en /etc), puedes usar sudo para abrir gedit con privilegios elevados.
+    ** gedit --view archivo.txt : Puedes abrir un archivo en modo de solo lectura para evitar cambios accidentales utilizando la opción --view.
+    ** gedit /ruta/completa/al/archivo.txt : Puedes abrir un archivo ubicado en una carpeta específica utilizando la ruta completa del archivo.
+    ** Kill ID_de_proceso_gedit : Puedes cerrar una instancia de gedit desde la terminal utilizando el comando kill. Primero, obtén el ID de proceso de gedit utilizando ps aux | grep gedit, y luego usa kill para cerrarlo.
+* ps : El uso más básico de ps es simplemente ejecutarlo sin opciones. Esto mostrará una lista de los procesos en ejecución para el usuario actual en la terminal actual.
+    ** ps -e : Puedes utilizar la opción -e o -A para mostrar todos los procesos de todos los usuarios en el sistema.
+    ** ps -l : Puedes utilizar la opción -l para mostrar información detallada sobre los procesos, incluidos los nombres de usuario, el estado del proceso, el uso de CPU y la memoria.
+    ** ps -x : Puedes utilizar la opción -x para mostrar todos los procesos, incluidos aquellos que no están asociados a una terminal.
+    ** ps -u usuario : Puedes utilizar la opción -u seguida del nombre de usuario para mostrar los procesos de un usuario específico.
+    ** ps -G grupo : Puedes utilizar la opción -G seguida del nombre del grupo para mostrar los procesos de un grupo específico. 
+    ** ps -H : Puedes utilizar la opción -H para mostrar todos los procesos en formato de árbol, lo que hace que sea más fácil ver la jerarquía de procesos y sus relaciones.
+    **  ps -C programa : Puedes utilizar la opción -C seguida del nombre de un programa para mostrar procesos que corresponden a ese programa específico.
+* type comando : Mostrar el tipo de un comando: El uso más básico de type es proporcionar el nombre del comando como argumento para mostrar cómo se interpretaría.
+    ** type -a comando : Puedes utilizar la opción -a para mostrar todas las rutas de comandos disponibles para un comando. Esto es útil si hay varios comandos con el mismo nombre y quieres ver cuál se ejecutará primero según la ruta de búsqueda.
+    ** type -p comando : Puedes utilizar la opción -p para mostrar solo la ruta de acceso al comando sin descripciones adicionales.
+    ** type nombre_de_la_funcion : Si deseas obtener información sobre una función definida por el usuario, puedes proporcionar el nombre de la función como argumento.
+    ** type nombre_del_alias : Sì deseas obtener información sobre un alias, puedes proporcionar el nombre del alias como argumento.
+* which comando : El uso más básico de which es proporcionar el nombre del comando como argumento para mostrar la ruta completa de su ubicación.
+    ** which -a comando : Puedes utilizar la opción -a para mostrar todas las ubicaciones en las que se encuentra un comando en caso de que existan múltiples instancias del mismo nombre en diferentes ubicaciones en la variable PATH.
+    ** which --skip-alias  comando : Puedes utilizar la opción --skip-alias para mostrar solo la primera ubicación encontrada en caso de que el comando sea un alias. Esto es útil para evitar mostrar rutas múltiples si un comando es un alias que apunta a diferentes ubicaciones.
+    ** which --all comando : Si deseas mostrar la ubicación de un comando sin verificar si es un alias, puedes utilizar la opción --all o -a junto con which. 
+    ** which --help : Puedes obtener información sobre el uso de which y sus opciones utilizando la opción --help. 
+* whereis comando : El uso más básico de whereis es proporcionar el nombre de un comando como argumento para buscar su ubicación en el sistema.
+    ** whereis -b comando : Si solo deseas buscar la ubicación del archivo binario de un comando, puedes utilizar la opción -b. 
+    ** whereis -m comando : Si solo deseas buscar la ubicación de las páginas de manual de un comando, puedes utilizar la opción -m.
+    ** whereis -s comando : Si solo deseas buscar la ubicación de las fuentes de comandos de un comando (si están disponibles), puedes utilizar la opción -s. 
+    ** whereis comando1 comando2 : Puedes buscar múltiples comandos al mismo tiempo proporcionando sus nombres como argumentos separados. 
+    ** whereis --help : Puedes obtener información sobre el uso de whereis y sus opciones utilizando la opción --help.
+* alias mi_alias="comando" : El uso más básico de alias es proporcionar el nombre del alias seguido del comando o secuencia de comandos que deseas abreviar.
+    ** unalias mi_alias : Para eliminar un alias, puedes utilizar el comando unalias seguido del nombre del alias que deseas eliminar. 
+    ** alias : Puedes listar todos los alias definidos en tu sesión actual utilizando el comando alias sin argumentos. 
+    ** alias mi_alias : Si deseas ver la definición de un alias específico, puedes usar alias seguido del nombre del alias. 
+    ** .bashrc o .bash_aliases : Si deseas que un alias esté disponible cada vez que inicies una nueva sesión, puedes agregar la definición del alias en tu archivo de inicio de sesión (como .bashrc o .bash_aliases). Esto asegurará que el alias esté disponible en futuras sesiones.
+    ** alias --help : Puedes obtener información sobre el uso de alias y sus opciones utilizando el comando alias sin argumentos o con la opción --help.
+* time comando : El uso más básico de time es preceder un comando con time.
+    ** time comando > salida.txt : Puedes redirigir la salida de time a un archivo utilizando el operador de redirección >. 
+    ** time comando1 | comando2 : Puedes utilizar time con pipelines para medir el tiempo de ejecución de una secuencia de comandos. 
+    ** time : Puedes usar time para medir el tiempo de ejecución de scripts de shell o programas que escribas. Simplemente precede la llamada al script o programa con time.
+    ** time -f "Tiempo real: %e segundos\nTiempo de CPU: %U segundos" comando : Puedes especificar el formato de salida de time utilizando la opción -f seguida de una cadena de formato. 
+* cal : El uso más básico de cal es simplemente ejecutarlo sin opciones. Esto mostrará el calendario del mes actual en la terminal. 
+    ** cal 5 2022 : Puedes mostrar el calendario de un mes y año específicos proporcionando el número del mes y el año como argumentos. 
+    ** cal -y : Puedes utilizar la opción -y para mostrar un calendario anual completo. 
+    ** cal -w : Puedes utilizar la opción -w para mostrar el número de la semana en el calendario. 
+    ** cal 2023 : Si deseas mostrar el calendario completo de un año específico, puedes proporcionar solo el año como argumento. 
+    ** val --version : Puedes usar la opción --version para mostrar la versión de cal. 
+* ncal : Esti mostrarà el calendario del mes actual en la terminal.
+* date : El uso más básico de date es simplemente ejecutarlo sin opciones. Esto mostrará la fecha y hora actual en la terminal.
+    ** date +"%Y-%m-%d %H:%M:%S" : Puedes utilizar la opción + seguida de un formato personalizado para mostrar la fecha en un formato específico.
+    ** sudo date -s "2023-09-18 15:30:00" : Puedes utilizar date con la opción -s seguida de una cadena de fecha y hora para configurar manualmente la fecha y hora del sistema. Esto generalmente requiere privilegios de superusuario (puedes usar sudo). 
+    ** date -u : Puedes utilizar la opción -u para mostrar la fecha y hora en formato UTC (Tiempo Universal Coordinado). 
+    ** date -d o date -t : Puedes utilizar opciones como -d para mostrar solo la fecha o -t para mostrar solo la hora.
+    ** date -I America/New_York : Puedes utilizar la opción -I seguida del nombre de un huso horario para mostrar la fecha y hora en ese huso horario. 
+    ** date +%s : Puedes utilizar la opción +%s para mostrar la fecha y hora en segundos desde la época Unix (1 de enero de 1970).
+    ** date +%A : Puedes utilizar la opción +%A para mostrar el nombre completo del día de la semana. 
+    ** date +%B : Puedes utilizar la opción +%B para mostrar el nombre completo del mes actual. 
+    ** date +"%I:%M:%S %P" : Puedes utilizar la opción +%I:%M:%S %p para mostrar la hora en formato de 12 horas con AM/PM.
+    ** date --iso-8601 : Puedes utilizar la opción --iso-8601 para mostrar la fecha y hora en formato ISO 8601. 
+    ** date --rfc-2822 : Puedes utilizar la opción --rfc-2822 para mostrar la fecha y hora en formato RFC 2822. 
+    ** date +%s%3N : Puedes utilizar la opción +%s%3N para mostrar la fecha y hora en milisegundos desde la época Unix.
+* tr a e : En este caso la entrada es 'a', pero en la salida a la entrada lo cambia por e. 
+    ** echo "texto" | tr 'a-z' 'A-Z' :Puedes utilizar la opción -c para especificar el conjunto de caracteres que deseas cambiar por otro conjunto de caracteres. 
+    ** echo "hola" | tr -d 'aeiou' : Puedes utilizar la opción -d para eliminar caracteres específicos de la entrada. 
+    ** echo "esto es un ejemplo" | tr -s ' ' : Puedes utilizar la opción -s para sustituir un conjunto de caracteres por un único carácter. 
+    ** echo "a1b2c3d" | tr -cd '[:digit:]' : Puedes utilizar tr junto con [:class:] para eliminar caracteres no deseados. 
+    ** echo "12345" | tr '0-9' 'X' : Puedes especificar un rango de caracteres utilizando el guion (-). 
+    ** tr --help : Puedes obtener información sobre el uso de tr y sus opciones utilizando la opción --help. 
+    ** echo "abcdef" | rev | tr -d '\n' : Puedes utilizar el comando rev junto con tr para revertir el orden de los caracteres en una línea. 
+    ** echo "h0e!l#l$6" | tr -d -c '[:alpha:]' : Puedes utilizar una expresión regular para eliminar todos los caracteres no alfabéticos de una cadena.
+    ** echo -e "Hola\tmundo" | tr .d '[:contrl: ] : Puedes utilizar tr para eliminar caracteres de control de una cadena, como tabulaciones y retornos de carro. 
+* wc archivo.txt : El uso más básico de wc es contar líneas en un archivo o entrada proporcionada desde la terminal.
+    ** wc -w archivo.txt : Puedes utilizar la opción -w para contar palabras en lugar de líneas. 
+    ** wc -c archivo.txt : Puedes utilizar la opción -c para contar caracteres en lugar de líneas o palabras. 
+    ** wc -l archivo.txt : Puedes utilizar la opción -l, -w, o -c para mostrar solo el recuento respectivo en un formato simple sin el nombre del archivo. 
+        *** wc -l << fin : Este comando se utiliza para contar lìneas de texto mientra que la palabra fin no se indique en la entrada .
+* cat document 2>/dev/null : mostrará el contenido del archivo "document" si existe en el directorio actual y descartará cualquier mensaje de error que se genere durante el proceso. Esto es útil si deseas mostrar el contenido de un archivo y no estás interesado en los mensajes de error que puedan surgir si el archivo no existe.
+* uniq archivo.txt : El uso más básico de uniq es simplemente ejecutarlo sin opciones. Esto mostrará las líneas únicas de la entrada proporcionada. 
+    ** uniq -d archivo.txt : Puedes utilizar la opción -d para mostrar solo las líneas que tienen duplicados. 
+    ** uniq -c archivo.txt : Puedes utilizar la opción -c para contar las líneas duplicadas y mostrar el número de ocurrencias junto a cada línea. 
+    ** uniq -s 3 archivo.txt : Puedes utilizar la opción -s seguida de un número para ignorar un número específico de caracteres al principio de cada línea antes de realizar la comparación. 
+    ** uniq -f 2 archivo.txt : Puedes utilizar la opción -f seguida de un número para ignorar un número específico de campos delimitados por espacios al principio de cada línea antes de realizar la comparación. 
+    ** uniq -u archivo.txt : Puedes utilizar la opción -u para mostrar solo las líneas únicas y eliminar las duplicadas.
+    ** sort archivo.txt | uniq : Ordena el archivo con 'sort' para asegurarse de las lìneas duplicadas estèn contiguas.
+* tee : se utiliza para leer la entrada estàndar y escribirla tanto en la salida estàndar como en uno o varios archivos.
+    ** comando | tee archivo.txt : El uso más simple de tee es redirigir la salida de un comando a un archivo mientras la muestra en la terminal.
+    **  comando | tee archivo1.txt archivo2.txt archivo3.txt : Puedes utilizar tee para guardar la salida en varios archivos a la vez. 
+    ** comando | tee -a archivo.txt : Puedes utilizar la opción -a para anexar la salida a un archivo existente en lugar de reemplazarlo. 
+    ** comando 2>&1 | tee archivo.txt >/dev/null : Puedes usar tee junto con redirecciones para guardar la salida en un archivo y redirigir la salida estándar a otro lugar.
+    ** comando | tee archivo.txt | otro_comando : Puedes utilizar tee para guardar la salida en un archivo y también redirigirla a otro comando o tubería. 
+    ** ./script.sh 2>&1 | tee log.txt : Puedes usar tee para guardar la salida completa de un script en un archivo.
+* grep : Se utiliza para buscar patrones de texto en archivos o en la salida de otros comandos.
+    ** grep "patrón" archivo.txt : El uso más simple de grep es buscar un patrón específico en un archivo o en la entrada proporcionada.
+    ** grep -r "patrón" directorio/ : Puedes utilizar la opción -r o -R para buscar patrones de forma recursiva en directorios y subdirectorios. 
+    ** grep -v "patrón" archivo.txt : Puedes utilizar la opción -v para mostrar líneas que no coincidan con el patrón. 
+    ** grep -E "patrón1|patrón2" archivo.txt : grep admite expresiones regulares para realizar búsquedas más avanzadas. 
+    ** grep -i "patrón" archivo.txt : Puedes utilizar la opción -i para realizar una búsqueda que ignore las diferencias entre mayúsculas y minúsculas. 
+    ** grep -n "patrón" archivo.txt : Puedes utilizar la opción -n para mostrar los números de línea junto con las coincidencias.
+    ** grep -c "patrón" archivo.txt : Puedes utilizar la opción -c para contar el número de coincidencias en lugar de mostrar las líneas coincidentes.
+    ** grep --help : Puedes obtener información sobre el uso de grep y sus opciones utilizando la opción --help. 
+* sort : Se utiliza para ordenar lìneas de texto en orden alfabético o nùmerico.
+    ** sort archivo.txt : El uso más básico de sort es ordenar líneas de texto alfabéticamente en orden ascendente. 
+    ** sort -n numeros.txt : Puedes utilizar la opción -n para ordenar líneas numéricamente en lugar de alfabéticamente. 
+    ** sort -r archivo.txt : Puedes utilizar la opción -r para ordenar las líneas en orden descendente. 
+    ** sort -k2 archivo.txt : Puedes utilizar la opción -k seguida de un número para especificar el campo por el cual deseas ordenar. 
+    ** sort -f archivo.txt : Puedes utilizar la opción -f para realizar una clasificación que ignore las diferencias entre mayúsculas y minúsculas.
+    ** sort -g numeros.txt : Puedes utilizar la opción -g para ordenar números teniendo en cuenta el valor numérico en lugar del orden lexicográfico. 
+    ** sort -u archivo.txt : Puedes utilizar la opción -u para ordenar líneas y eliminar duplicados. 
+    ** sort -t',' -k3 archivo.csv : Puedes utilizar la opción -t para especificar un carácter delimitador personalizado para separar campos en cada línea.
+    ** sort archivo1.txt archivo2.txt archivo3.txt : Puedes proporcionar varios archivos como argumentos, y sort los ordenará juntos.
+* cut : Se utiliza para extraer secciones especìficas de lìneas de texto de archivos o de la entrada estàndar.
+    ** cut -d',' -f2 archivo.csv : El uso más básico de cut es recortar campos delimitados por un carácter específico. 
+    ** cut -c1-5 archivo.txt : Puedes utilizar la opción -c para recortar caracteres específicos de cada línea.
+    ** cut -b1-5 archivo.bin : Similar a -c, puedes utilizar la opción -b para recortar por bytes en lugar de caracteres. 
+    ** cut -d',' -f3-5 archivo.csv : Puedes especificar un rango de caracteres o campos utilizando la opción -f o -c.
+    ** cut -c2,4,6 archivo.txt : Puedes utilizar la opción -c para recortar campos basados en caracteres específicos en lugar de delimitadores fijos. 
+    ** cut -d':,;' -f2 archivo.txt : Puedes especificar varios caracteres delimitadores utilizando la opción -d. 
+    ** cut -d',' -f2- archivo.csv : Puedes utilizar la opción -f o -c junto con un signo - para mostrar el resultado inverso.
+    ** cut --help : Puedes obtener información sobre el uso de cut y sus opciones utilizando la opción --help.
