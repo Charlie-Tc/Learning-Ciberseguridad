@@ -303,3 +303,46 @@ COMANDOS:
     ** cut -d':,;' -f2 archivo.txt : Puedes especificar varios caracteres delimitadores utilizando la opción -d. 
     ** cut -d',' -f2- archivo.csv : Puedes utilizar la opción -f o -c junto con un signo - para mostrar el resultado inverso.
     ** cut --help : Puedes obtener información sobre el uso de cut y sus opciones utilizando la opción --help.
+    ** ls -l | cut -c 41-44 : sirve para ver desde un espacio o caràcter definido.
+* ps : se utiliza para mostrar informaciòn sobre los procesos en ejecuciòn en el sistema.
+    ** ps : El uso más básico de ps es simplemente ejecutarlo sin opciones. Esto mostrará todos los procesos asociados con el usuario actual en la terminal.
+    ** ps -e o ps -A : Para mostrar todos los procesos en el sistema, puedes utilizar la opción -e o -A.
+    ** ps -l : Puedes utilizar la opción -l para obtener una salida más detallada que incluye información sobre la terminal, el estado, el uso de CPU y más.
+    ** ps -u usuario  o ps -ux : Puedes utilizar la opción -u seguida del nombre de usuario para mostrar procesos específicos de ese usuario y la opcion 'ps -ux' nos da todos los procesos que se estàn ejecutando con nuestro usuario.
+    ** ps -f o ps -ef : Puedes utilizar la opciòn '-ef' para mostrar todos los procesos en formato completo, que incluye informaciòn detallada de la lìnea de comandos y mas.
+    ** ps --forest : Puedes utilizar la opción --forest para mostrar los procesos en forma de árbol, lo que facilita la visualización de las relaciones de los procesos.
+    ** ps -g PGID : Puedes utilizar la opción -g seguida del ID del grupo de procesos (PGID) para mostrar procesos específicos de ese grupo.
+    ** ps --help o : Puedes obtener información sobre el uso de ps y sus opciones utilizando la opción --help.
+    ** ps -uxf : nos muestra todos los procesos del usuario en forma de àrbol jerarquico.
+* pstree : Se utiliza para mostrar una representaciòn jeràrquica de los procesos en el sistema en forma de àrbol.
+* sleep : Se utiliza en linux para suspender la ejecuciòn de un script o comando durante un perìodo de tiempo especìfico.
+    ** sleep 5 : Este comando pausarà la ejecuciòn durante 5 segundos antes de continuar.
+* renice : Se utiliza para cambiar la prioridad de ejecuciòn de un proceso en tiempo de ejecuciòn. No es comùnmente combinado con otros comandos.
+    ** renice -n 10 -p PID : El uso básico de "renice" es proporcionar el número de prioridad deseado y el ID de proceso (PID) del proceso al que deseas cambiar la prioridad.
+    ** renice -n 5 -g PGID : Puedes utilizar la opción "-g" seguida del número de prioridad deseado y el ID del grupo de procesos (PGID) para cambiar la prioridad de un grupo de procesos.
+    ** renice -n -5 -u usuario : Puedes utilizar la opción "-u" seguida del nombre de usuario para cambiar la prioridad de todos los procesos pertenecientes a ese usuario.
+    ** renice -p PID : Puedes utilizar la opción "-p" seguida del PID para mostrar la prioridad actual de un proceso sin realizar ningún cambio.
+    ** renice --help : Puedes obtener información sobre el uso de "renice" y sus opciones utilizando la opción "--help".
+* top : Se utiliza para monitoriar la actividad del sistema y ver informaciòn en tiempo real sobre los procesos en ejecuciòn, la carga del sistema y otros recursos. "top" es una herramienta interactiva y no se combina tìpicamente con otros comandos.
+    ** top -d 2 : Puedes cambiar el intervalo de actualización de "top" para ajustar con qué frecuencia se actualiza la información. 
+    ** top -U usuario : Puedes utilizar la opción -U seguida del nombre de usuario para mostrar solo los procesos de ese usuario.
+    ** Cambiar la prioridad de actualización: Puedes cambiar la prioridad de actualización en tiempo real dentro de "top". Presiona "r" y luego ingresa el valor de prioridad deseado.
+    ** Mostrar la ayuda: Puedes obtener información sobre el uso de "top" y las opciones disponibles presionando "h" mientras se ejecuta "top".
+        *** Atajos de teclado comunes en top para interactuar:
+            **** q: Salir de "top".
+            **** k: Matar (terminar) un proceso. Debes ingresar el PID del proceso que deseas terminar.
+            **** u: Mostrar solo los procesos de un usuario específico. Luego, ingresa el nombre de usuario.
+            **** f: Mostrar o ocultar campos específicos.
+            **** L: Mostrar o ocultar procesos de usuario.
+            **** t: Mostrar o ocultar la barra de resumen de tareas.
+            **** H: Mostrar o ocultar los encabezados de las columnas.
+            **** W: Guardar la configuración actual en el archivo "~/.toprc".
+            **** R: Invertir el orden de clasificación de la lista de procesos.
+            **** c: Mostrar o ocultar la información sobre los comandos de los procesos.
+            **** ?: Mostrar la página de ayuda incorporada de "top" con información sobre atajos de teclado.
+
+
+
+
+
+
