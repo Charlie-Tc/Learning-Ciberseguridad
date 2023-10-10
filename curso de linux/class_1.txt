@@ -340,9 +340,48 @@ COMANDOS:
             **** R: Invertir el orden de clasificación de la lista de procesos.
             **** c: Mostrar o ocultar la información sobre los comandos de los procesos.
             **** ?: Mostrar la página de ayuda incorporada de "top" con información sobre atajos de teclado.
-
-
-
-
+* kill : Se utiliza para enviar señales a procesos en ejecuciòn para controlar su comportamiento. Aunque "kill" no se combina tìpicamente con otros comandos.
+    ** kill PID : Si ejecutas "kill" sin especificar una señal, enviará la señal predeterminada SIGTERM al proceso especificado. Esta señal suele indicar al proceso que se cierre de manera ordenada.
+    ** kill -s SIGKILL 12345  o kill -9 12345: Puedes especificar una señal específica utilizando la opción "-s" seguida del nombre de la señal o su número. Por ejemplo, para enviar la señal SIGKILL (que fuerza la terminación del proceso) al proceso con PID 12345.
+    ** kill -9 PID : Para enviar la señal SIGKILL, que es una señal más fuerte y forzosa, puedes utilizar la opción "-9" (equivalente a SIGKILL). Esto se usa a menudo cuando un proceso no responde a señales menos agresivas.
+    ** kill --help : Puedes obtener información sobre el uso de "kill" y las señales disponibles utilizando la opción "--help".
+    ** kill -s SIGUSR1 PID : Puedes enviar señales de usuario personalizadas (por ejemplo, SIGUSR1 o SIGUSR2) utilizando sus números correspondientes o sus nombres. Esto es útil cuando un programa está diseñado para responder a señales específicas de usuario.
+* jobs : Se utiliza para listar los trabajos en segundo plano que estàn asociados con la sesiòn actual de la terminal.
+    ** bg %1 : Se utiliza para enviar un trabajo en segundo plano a ejecución en segundo plano si se encuentra en estado detenido. Puedes especificar un trabajo utilizando su número de trabajo o el símbolo %. 
+    ** fg %2 : Se utiliza para traer un trabajo en segundo plano al primer plano y establecerlo como trabajo actual en ejecución. Al igual que con bg, puedes especificar el trabajo utilizando su número de trabajo o el símbolo %. 
+    ** kill %3 : Aunque no es exclusivo de "jobs", el comando "kill" se utiliza para enviar señales a trabajos en segundo plano o en primer plano. Puedes especificar el proceso objetivo utilizando su número de trabajo o PID. 
+        *** -l: Muestra información adicional sobre cada trabajo, incluyendo su estado y el comando asociado.
+        *** -p: Muestra solo los números de proceso (PID) de los trabajos en lugar de mostrar información detallada.
+        *** -n: Muestra solo los trabajos en segundo plano.
+        *** -r: Muestra solo los trabajos en segundo plano que están en estado detenido.
+* chmod : Se utiliza para cambiar los permisos de archivos y directorios.
+        *** - : Quitar permisos.
+        *** + : Otorgar permisos.
+        *** a: Todos.
+        *** u: El propietario del archivo.
+        *** g: El grupo del archivo.
+        *** o: Otros usuarios.
+        *** r: Permiso de lectura(valor=4).
+        *** w: Permiso de escritura(valor=2).
+        *** x: Permiso de ejecución(valor=1).
+    ** chmod -R 755 directorio : Si deseas cambiar permisos de un directorio y sus subdirectorios de manera recursiva, puedes usar la opción -R.
+    ** chmod -a "user:usuario:rw-" archivo : Si tu sistema de archivos admite ACL, puedes utilizar la opciòn '-a' para modificar las ACL de un archivo o directorio.
+    ** stat archivo : Para mostrar informaciòn sobre un archivo, incluidos los permisos de acceso.
+* sudo chgrp grupo archivo : Para cambiar el grupo de un archivo a "grupo".
+* sudo chown usuario archivo : Para cambiar el propietario de un archivo a "usuario".
+* umask : Se utiliza para establecer o mostrar la màscara de permisos predeterminada que se aplica a los archivos y directorios recièn creados  en un sistema.
+    ** umask 022 : Puedes utilizar "umask" seguido de una notación octal para establecer la máscara de permisos. Por ejemplo, para establecer una máscara que permita permisos completos al propietario y solo permisos de lectura a otros (umask 022).
+        DIRECTORIO:
+            *** Defecto :        777
+            *** Restamos umask : 022
+            *** Resultado =      755
+        ARCHIVO:
+            *** Defecto :        666
+            *** Restamos umask : 022
+            *** Resultado =      644
+        ** umask : Puedes usar "umask" sin argumentos para mostrar la máscara de permisos actual.
+    ** umask -S : Puedes utilizar la opción -S para mostrar la máscara de permisos en formato simbólico.
+    
+    
 
 
